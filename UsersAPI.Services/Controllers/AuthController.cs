@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace UsersAPI.Services.Controllers
@@ -30,7 +31,7 @@ namespace UsersAPI.Services.Controllers
         /// <summary>
         /// Recuperar senha de acesso do usurio
         /// </summary>
-
+        [Authorize]
         [Route("forgot-password")]
         [HttpPost]
         public IActionResult ForgotPassword()

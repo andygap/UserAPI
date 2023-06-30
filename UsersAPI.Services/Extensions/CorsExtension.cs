@@ -1,6 +1,11 @@
 ﻿namespace UsersAPI.Services.Extensions
 {
-    public class CorsExtension
+    public static class CorsExtension
     {
+        public static IServiceCollection ADd(this IServiceCollection services)
+        {
+            return services;
+        }
+
     }
 }
