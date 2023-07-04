@@ -1,4 +1,4 @@
-﻿namespace UsersAPi.Domain.Interfaces.Repositories
+﻿namespace UsersAPI.Domain.Interfaces.Repositories
 {
     public interface IUnitOfWork :IDisposable
     {

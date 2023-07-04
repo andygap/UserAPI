@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UsersAPi.Domain.Models;
+using UsersAPI.Domain.Models;
 
-namespace UsersAPi.Domain.Interfaces.Repositories
+namespace UsersAPI.Domain.Interfaces.Repositories
 {
     public interface IUserRepository:IBaseRepository<User, Guid>
     {

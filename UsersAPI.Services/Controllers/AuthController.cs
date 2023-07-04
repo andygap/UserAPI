@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using UsersAPI.Application.Interfaces.Application;
 
 namespace UsersAPI.Services.Controllers
 {
@@ -8,10 +8,17 @@ namespace UsersAPI.Services.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly IUserAppService _userAppService;
+
+        public AuthController(IUserAppService userAppService)
+        {
+            _userAppService = userAppService;
+        }
+
         /// <summary>
         /// Autenticar o usuario
         /// </summary>
-        
+
         [Route("login")]
         [HttpPost]
         public IActionResult Login()

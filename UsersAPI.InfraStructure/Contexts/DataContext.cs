@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UsersAPi.Domain.Models;
+using UsersAPI.Domain.Models;
 
 namespace UsersAPI.Infra.Data.Contexts
 {

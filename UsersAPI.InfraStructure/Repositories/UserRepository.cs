@@ -1,5 +1,5 @@
-﻿using UsersAPi.Domain.Interfaces.Repositories;
-using UsersAPi.Domain.Models;
+﻿using UsersAPI.Domain.Interfaces.Repositories;
+using UsersAPI.Domain.Models;
 using UsersAPI.Infra.Data.Contexts;
 
 namespace UsersAPI.Infra.Data.Repositories

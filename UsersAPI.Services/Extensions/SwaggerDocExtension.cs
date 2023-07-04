@@ -1,6 +1,5 @@
 ﻿using Microsoft.OpenApi.Models;
 using System.Reflection;
-using System.Runtime.Intrinsics;
 
 namespace UsersAPI.Services.Extensions
 {
