@@ -1,16 +1,26 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using UsersAPI.Domain.Models;
+using UsersAPI.Infra.Data.Configurations;
 
 namespace UsersAPI.Infra.Data.Contexts
 {
     public class DataContext : DbContext
     {
-        public DbSet<User>  Users { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-            optionsBuilder.UseInMemoryDatabase(databaseName: "bd_users");
+
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //  adicionando dessa forma não precisaria ficar adicionando cada classe de configuração aqui
+            // modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            //registrando cada classe de configuração
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+        }
+
+        public DbSet<User> Users { get; set; }
 
     }
 }

@@ -1,5 +1,7 @@
 using UsersAPI.Services.Extensions;
-using UsersAPI.Infra.Ioc.Extensions;
+using UsersAPI.Infra.IoC.Extensions;
+using UsersAPI.Services.MiIddlewares;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -10,9 +12,12 @@ builder.Services.AddJwtBearer();
 builder.Services.AddCorsPolicy();
 builder.Services.AddDependencyInjection();
 builder.Services.AddAutoMapperConfig();
+builder.Services.AddDbContextConfig(builder.Configuration);
+builder.Services.AddRabbitMQ(builder.Configuration);
 
 var app = builder.Build();
 
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseSwaggerDoc();
 app.UseAuthentication();
 app.UseAuthorization();
@@ -20,3 +25,5 @@ app.UseCorsPolicy();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }

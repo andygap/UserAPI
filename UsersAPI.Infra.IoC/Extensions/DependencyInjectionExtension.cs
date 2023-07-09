@@ -1,13 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using UsersAPI.Application.Interfaces.Application;
+using UsersAPI.Application.Services;
 using UsersAPI.Domain.Interfaces.Repositories;
 using UsersAPI.Domain.Interfaces.Services;
 using UsersAPI.Domain.Services;
-using UsersAPI.Application.Interfaces.Application;
-using UsersAPI.Application.Services;
-using UsersAPI.Infra.Data.Contexts;
 using UsersAPI.Infra.Data.Repositories;
 
-namespace UsersAPI.Infra.Ioc.Extensions
+namespace UsersAPI.Infra.IoC.Extensions
 {
     public static class DependencyInjectionExtension
     {
@@ -16,10 +15,11 @@ namespace UsersAPI.Infra.Ioc.Extensions
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IUserAppService, UserAppService>();
             services.AddTransient<IAuthAppService, AuthAppService>();
-            services.AddTransient<IUserDomainService, UserDomainService>();          
-            services.AddTransient<DataContext>();
+            services.AddTransient<IUserDomainService, UserDomainService>();
 
             return services;
         }
     }
 }
+
+

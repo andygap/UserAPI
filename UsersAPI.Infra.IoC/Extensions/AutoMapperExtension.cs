@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace UsersAPI.Infra.Ioc.Extensions
+namespace UsersAPI.Infra.IoC.Extensions
 {
     public static class AutoMapperExtension
     {
