@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UsersAPI.Domain.Interfaces.Repositories
+﻿namespace UsersAPI.Domain.Interfaces.Repositories
 {
     public interface IBaseRepository<TEntity, TKey> : IDisposable
         where TEntity : class

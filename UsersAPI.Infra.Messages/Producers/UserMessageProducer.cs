@@ -10,11 +10,11 @@ namespace UsersAPI.Infra.Messages.Producers
 {
     public class UserMessageProducer : IUserMessageProducer
     {
-        private readonly RabbitMQSettings rabbitMQSettings;
+        private readonly RabbitMQSettings? rabbitMQSettings;
 
-        public UserMessageProducer(IOptions<RabbitMQSettings?> rabbitMQSettings)
+        public UserMessageProducer(IOptions<RabbitMQSettings>? rabbitMQSettings)
         {
-            this.rabbitMQSettings = rabbitMQSettings.Value;
+            this.rabbitMQSettings = rabbitMQSettings?.Value;
         }
 
         public void Send(UserMessageVO userMessage)
